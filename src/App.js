@@ -24,13 +24,12 @@ function App() {
     if (input === "") {
       alert("Please enter a valid todo");
       return;
-    } else {
-      await addDoc(collection(db, "todos"), {
-        text: input,
-        completed: false,
-      });
-      setInput("");
     }
+    await addDoc(collection(db, "todos"), {
+      text: input,
+      completed: false,
+    });
+    setInput("");
   };
 
   // read todo from firebase
